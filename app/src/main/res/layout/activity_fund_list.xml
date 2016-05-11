@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/ll_pinned2_real"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="pinned"/>
+
+            <com.szl.fundlistdemo.MyHorizontalScrollView
+                android:id="@+id/pinnedhscrollview2_real"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_1_2_real"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="hehe"/>
+
+                    <Button
+                        android:id="@+id/btn_2_2_real"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="hehe"/>
+
+                    <Button
+                        android:id="@+id/btn_3_2_real"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="hehe"/>
+
+                    <Button
+                        android:id="@+id/btn_4_2_real"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="hehe"/>
+
+                    <Button
+                        android:id="@+id/btn_5_2_real"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="hehe"/>
+
+                    <Button
+                        android:id="@+id/btn_6_2_real"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="hehe"/>
+
+                    <Button
+                        android:id="@+id/btn_7_2_real"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="hehe"/>
+
+                    <Button
+                        android:id="@+id/btn_8_2_real"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="hehe"/>
+                </LinearLayout>
+
+            </com.szl.fundlistdemo.MyHorizontalScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_pinned_otherfund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="pinned"/>
+
+            <com.szl.fundlistdemo.MyHorizontalScrollView
+                android:id="@+id/pinnedhscrollview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_1"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="haha"/>
+
+                    <Button
+                        android:id="@+id/btn_2"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="haha"/>
+
+                    <Button
+                        android:id="@+id/btn_3"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="haha"/>
+
+                    <Button
+                        android:id="@+id/btn_4"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="haha"/>
+
+                    <Button
+                        android:id="@+id/btn_5"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="haha"/>
+
+                    <Button
+                        android:id="@+id/btn_6"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="haha"/>
+
+                    <Button
+                        android:id="@+id/btn_7"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="haha"/>
+
+                    <Button
+                        android:id="@+id/btn_8"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="haha"/>
+                </LinearLayout>
+
+            </com.szl.fundlistdemo.MyHorizontalScrollView>
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.szl.fundlistdemo.ObservableScrollView
+            android:id="@+id/root_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <com.szl.fundlistdemo.ObservableScrollView
+                    android:id="@+id/main_scrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.szl.fundlistdemo.WrapContentListView
+                            android:id="@+id/left_lv"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none"/>
+
+                        <com.szl.fundlistdemo.MyHorizontalScrollView
+                            android:id="@+id/hscrollview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.szl.fundlistdemo.WrapContentListView
+                                android:id="@+id/right_lv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </com.szl.fundlistdemo.MyHorizontalScrollView>
+                    </LinearLayout>
+
+
+                </com.szl.fundlistdemo.ObservableScrollView>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_pinned2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="pinned"/>
+
+                    <com.szl.fundlistdemo.MyHorizontalScrollView
+                        android:id="@+id/pinnedhscrollview2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn_1_2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="hehe"/>
+
+                            <Button
+                                android:id="@+id/btn_2_2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="hehe"/>
+
+                            <Button
+                                android:id="@+id/btn_3_2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="hehe"/>
+
+                            <Button
+                                android:id="@+id/btn_4_2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="hehe"/>
+
+                            <Button
+                                android:id="@+id/btn_5_2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="hehe"/>
+
+                            <Button
+                                android:id="@+id/btn_6_2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="hehe"/>
+
+                            <Button
+                                android:id="@+id/btn_7_2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="hehe"/>
+
+                            <Button
+                                android:id="@+id/btn_8_2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="hehe"/>
+                        </LinearLayout>
+
+                    </com.szl.fundlistdemo.MyHorizontalScrollView>
+                </LinearLayout>
+
+                <com.szl.fundlistdemo.ObservableScrollView
+                    android:id="@+id/main_scrollview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.szl.fundlistdemo.WrapContentListView
+                            android:id="@+id/left_lv2"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none"/>
+
+                        <com.szl.fundlistdemo.MyHorizontalScrollView
+                            android:id="@+id/hscrollview2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.szl.fundlistdemo.WrapContentListView
+                                android:id="@+id/right_lv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </com.szl.fundlistdemo.MyHorizontalScrollView>
+                    </LinearLayout>
+
+
+                </com.szl.fundlistdemo.ObservableScrollView>
+
+
+            </LinearLayout>
+        </com.szl.fundlistdemo.ObservableScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>
