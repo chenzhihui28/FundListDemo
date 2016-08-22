@@ -14,51 +14,38 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class FundListActivity extends AppCompatActivity {
-    MyHorizontalScrollView mHorizontalScrollView, mHorizontalScrollView2, mPinnedHorizontalScrollView, mPinnedHorizontalScrollView2,mPinnedHorizontalScrollView2_real;
-    ObservableScrollView main_scrollview, main_scrollview2, root_scrollview;
-    WrapContentListView mLeftListView, mLeftListView2;
-    WrapContentListView mRightListView, mRightListView2;
+    MyHorizontalScrollView mHorizontalScrollView, mPinnedHorizontalScrollView;
+    ObservableScrollView main_scrollview, root_scrollview;
+    WrapContentListView mLeftListView;
+    WrapContentListView mRightListView;
     LeftAdapter mLeftAdapter;
     RightAdapter mRightAdapter;
     SwipeRefreshLayout swiperefresh;
-    LinearLayout ll_pinned2,ll_pinned2_real,ll_pinned_otherfund;
-    int currentType = 0;
-
-
+    LinearLayout ll_pinned_otherfund;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fund_list);
-        ll_pinned2 = (LinearLayout) findViewById(R.id.ll_pinned2);
-        ll_pinned2_real = (LinearLayout) findViewById(R.id.ll_pinned2_real);
         ll_pinned_otherfund = (LinearLayout) findViewById(R.id.ll_pinned_otherfund);
 
 
         mHorizontalScrollView = (MyHorizontalScrollView) findViewById(R.id.hscrollview);
-        mHorizontalScrollView2 = (MyHorizontalScrollView) findViewById(R.id.hscrollview2);
 
         mPinnedHorizontalScrollView = (MyHorizontalScrollView) findViewById(R.id.pinnedhscrollview);
-        mPinnedHorizontalScrollView2 = (MyHorizontalScrollView) findViewById(R.id.pinnedhscrollview2);
-        mPinnedHorizontalScrollView2_real = (MyHorizontalScrollView) findViewById(R.id.pinnedhscrollview2_real);
 
 
         mLeftListView = (WrapContentListView) findViewById(R.id.left_lv);
-        mLeftListView2 = (WrapContentListView) findViewById(R.id.left_lv2);
 
         mRightListView = (WrapContentListView) findViewById(R.id.right_lv);
-        mRightListView2 = (WrapContentListView) findViewById(R.id.right_lv2);
 
         mLeftAdapter = new LeftAdapter(this);
         mRightAdapter = new RightAdapter(this);
         mLeftListView.setAdapter(mLeftAdapter);
-        mLeftListView2.setAdapter(mLeftAdapter);
         mRightListView.setAdapter(mRightAdapter);
-        mRightListView2.setAdapter(mRightAdapter);
 
         main_scrollview = (ObservableScrollView) findViewById(R.id.main_scrollview);
-        main_scrollview2 = (ObservableScrollView) findViewById(R.id.main_scrollview2);
 
 
         mLeftAdapter.notifyDataSetChanged();
@@ -75,12 +62,7 @@ public class FundListActivity extends AppCompatActivity {
             }
         });
 
-        mRightListView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), position + "", Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
         mHorizontalScrollView.setOnScrollChangedCallback(new MyHorizontalScrollView.OnScrollChangedCallback() {
             @Override
@@ -89,12 +71,7 @@ public class FundListActivity extends AppCompatActivity {
             }
         });
 
-        mHorizontalScrollView2.setOnScrollChangedCallback(new MyHorizontalScrollView.OnScrollChangedCallback() {
-            @Override
-            public void onScroll(int l, int t, int oldl, int oldt) {
-                allScroll(l, t);
-            }
-        });
+
 
         mPinnedHorizontalScrollView.setOnScrollChangedCallback(new MyHorizontalScrollView.OnScrollChangedCallback() {
             @Override
@@ -104,19 +81,7 @@ public class FundListActivity extends AppCompatActivity {
         });
 
 
-        mPinnedHorizontalScrollView2.setOnScrollChangedCallback(new MyHorizontalScrollView.OnScrollChangedCallback() {
-            @Override
-            public void onScroll(int l, int t, int oldl, int oldt) {
-                allScroll(l, t);
-            }
-        });
 
-        mPinnedHorizontalScrollView2_real.setOnScrollChangedCallback(new MyHorizontalScrollView.OnScrollChangedCallback() {
-            @Override
-            public void onScroll(int l, int t, int oldl, int oldt) {
-                allScroll(l, t);
-            }
-        });
 
 
         main_scrollview.setScrollViewListener(new ObservableScrollView.ScrollViewListener() {
@@ -131,27 +96,6 @@ public class FundListActivity extends AppCompatActivity {
             }
         });
 
-        root_scrollview.setScrollViewListener(new ObservableScrollView.ScrollViewListener() {
-            @Override
-            public void onScrollChanged(int x, int y, int oldx, int oldy) {
-                if (root_scrollview.getScrollY() >= main_scrollview2.getY()) {
-                    //第二个固定行已经被滚上去看不见了
-                    if(currentType == 0){
-                        currentType = 1;
-                        ll_pinned_otherfund.setVisibility(View.GONE);
-                        ll_pinned2_real.setVisibility(View.VISIBLE);
-                    }
-
-                } else {
-                    //第二个固定行可见
-                    if(currentType == 1){
-                        currentType = 0;
-                        ll_pinned2_real.setVisibility(View.GONE);
-                        ll_pinned_otherfund.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-        });
 
         swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -180,10 +124,7 @@ public class FundListActivity extends AppCompatActivity {
 
     private synchronized void allScroll(int l, int t) {
         mPinnedHorizontalScrollView.scrollTo(l, t);
-        mPinnedHorizontalScrollView2.scrollTo(l, t);
-        mPinnedHorizontalScrollView2_real.scrollTo(l, t);
         mHorizontalScrollView.scrollTo(l, t);
-        mHorizontalScrollView2.scrollTo(l, t);
     }
 
 
